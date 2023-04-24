@@ -2,6 +2,8 @@
 
 A simple app that should display some useful information on the 7" raspberry pi touch screen.
 
+![screenshot](https://github.com/brunottonurb/kiosk-next/blob/main/screenshot.jpg?raw=true)
+
 ## Features
 
 - [x] Display current time
