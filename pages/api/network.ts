@@ -11,6 +11,7 @@ export default async function handler(
 ) {
   const { stdout, stderr } = await execAsync(cmd);
   if (stderr) {
+    console.error('Error running nmap: ' + stderr);
     res.status(500).json({ error: stderr });
   } else {
     try {
