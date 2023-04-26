@@ -12,24 +12,24 @@ export default async function handler(
   res.status(501).json({ error: 'Not implemented' });
   return;
 
-  if (!client) {
-    const gateway = await discoverGateway();
-    console.log(gateway);
-    client = new TradfriClient(gateway!.addresses[0]);
+  // if (!client) {
+  //   const gateway = await discoverGateway();
+  //   console.log(gateway);
+  //   client = new TradfriClient(gateway!.addresses[0]);
     
-    if (!(process.env.TRADFRI_IDENTITY && process.env.TRADFRI_PSK) && process.env.TRADFRI_SECURITY_CODE) {
-      const { identity, psk } = await client.authenticate(process.env.TRADFRI_SECURITY_CODE!);
-      console.log(identity, psk);
-    } else if (process.env.TRADFRI_IDENTITY && process.env.TRADFRI_PSK) {
-      await client.connect(process.env.TRADFRI_IDENTITY, process.env.TRADFRI_PSK);
-    } else {
-      throw new Error('Missing security code or identity/psk');
-    }
-  }
+  //   if (!(process.env.TRADFRI_IDENTITY && process.env.TRADFRI_PSK) && process.env.TRADFRI_SECURITY_CODE) {
+  //     const { identity, psk } = await client.authenticate(process.env.TRADFRI_SECURITY_CODE!);
+  //     console.log(identity, psk);
+  //   } else if (process.env.TRADFRI_IDENTITY && process.env.TRADFRI_PSK) {
+  //     await client.connect(process.env.TRADFRI_IDENTITY, process.env.TRADFRI_PSK);
+  //   } else {
+  //     throw new Error('Missing security code or identity/psk');
+  //   }
+  // }
 
-  console.log(client.devices);
+  // console.log(client.devices);
 
-  res.status(200).json({ name: 'John Doe' });
+  // res.status(200).json({ name: 'John Doe' });
 }
 
 // process.stdin.resume(); //so the program will not close instantly ?
