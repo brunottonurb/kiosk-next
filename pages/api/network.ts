@@ -3,9 +3,7 @@ import { promisify } from 'util';
 import { exec } from 'child_process';
 const execAsync = promisify(exec);
 
-// do not try this at home HACK HACK HACK
-// const cmd = `echo "${process.env.PW}" | sudo -S "nmap -o - -sn 192.168.178.0/24"`;
-const cmd = 'nmap -o - -sn 192.168.178.0/24';
+const cmd = 'sudo nmap -o - -sn 192.168.178.0/24';
 
 export default async function handler(
   req: NextApiRequest,
