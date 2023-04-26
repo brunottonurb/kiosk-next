@@ -22,7 +22,18 @@ echo "LAT=<yourlat>" >> .env.local
 echo "LON=<yourlon>" >> .env.local
 ```
 
-Your need to install nmap on the pi.
+For the TRÅDFRI integration you can add the gateway ip, but autodiscovery should also work
+```bash
+echo "TRADFRI_GATEWAY_IP=<yourgatewayip>" >> .env.local
+```
+Then set either the TRADFRI_SECURITY_CODE or TRADFRI_IDENTITY and TRADFRI_PSK variables.
+```bash
+echo "TRADFRI_SECURITY_CODE=<yoursecuritycode>" >> .env.local
+echo "TRADFRI_IDENTITY=<youridentity>" >> .env.local
+echo "TRADFRI_PSK=<yourpsk>" >> .env.local
+```
+
+Your need to install nmap on the pi for the network scan to work.
 ```bash
 sudo apt install nmap
 ```
