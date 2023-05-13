@@ -1,8 +1,4 @@
-import Image from 'next/image';
-import { Inter } from 'next/font/google';
-import { Network, Pollution, Time, Weather } from '@/components';
-
-const inter = Inter({ subsets: ['latin'] });
+import { BVG, Network, Pollution, Time, Weather } from '@/components';
 
 export default function Home() {
   return (
@@ -13,7 +9,7 @@ export default function Home() {
         <img src="/turn-off-svgrepo-com.svg" alt="turn off" className="h-10 w-10" />
         <span className="text-xs">Turn off all smart devices</span>
       </button>
-      <button className="active:shadow-inner">PLAY LIKED SONGS ON SONOS</button>
+      <BVG />
       <Time />
       <Network />
     </main>
